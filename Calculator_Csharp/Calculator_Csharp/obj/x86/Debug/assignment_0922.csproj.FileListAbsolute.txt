@@ -4,3 +4,9 @@
 /Users/sephiroth/Developer/Calculator_Csharp/Calculator_Csharp/obj/x86/Debug/assignment_0922.csproj.CoreCompileInputs.cache
 /Users/sephiroth/Developer/Calculator_Csharp/Calculator_Csharp/obj/x86/Debug/Calculator_Csharp.exe
 /Users/sephiroth/Developer/Calculator_Csharp/Calculator_Csharp/obj/x86/Debug/Calculator_Csharp.pdb
+/Users/sephiroth/Developer/VisualStudioProject/Assignment/Calculator_Csharp/Calculator_Csharp/bin/Debug/Calculator_Csharp.exe
+/Users/sephiroth/Developer/VisualStudioProject/Assignment/Calculator_Csharp/Calculator_Csharp/bin/Debug/Calculator_Csharp.pdb
+/Users/sephiroth/Developer/VisualStudioProject/Assignment/Calculator_Csharp/Calculator_Csharp/obj/x86/Debug/assignment_0922.csprojResolveAssemblyReference.cache
+/Users/sephiroth/Developer/VisualStudioProject/Assignment/Calculator_Csharp/Calculator_Csharp/obj/x86/Debug/assignment_0922.csproj.CoreCompileInputs.cache
+/Users/sephiroth/Developer/VisualStudioProject/Assignment/Calculator_Csharp/Calculator_Csharp/obj/x86/Debug/Calculator_Csharp.exe
+/Users/sephiroth/Developer/VisualStudioProject/Assignment/Calculator_Csharp/Calculator_Csharp/obj/x86/Debug/Calculator_Csharp.pdb
