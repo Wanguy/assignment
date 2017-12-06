@@ -1,6 +1,6 @@
 # Notebook
 
-[![Travis](https://img.shields.io/badge/Download-v1.0-blue.svg)](https://github.com/Wanguy/assignment/releases/tag/1.0) [![Sourcegraph for Repo Reference Count](https://img.shields.io/badge/build-passing-brightgreen.svg)]() [![Sourcegraph for Repo Reference Count](https://img.shields.io/badge/Language-Swift 4-brightgreen.svg)]() [![Sourcegraph for Repo Reference Count](https://img.shields.io/badge/License-GPLv3-brightgreen.svg)](https://github.com/Wanguy/assignment/blob/master/LICENSE) 
+[![Travis](https://img.shields.io/badge/Download-v1.0-blue.svg)](https://github.com/Wanguy/assignment/releases/tag/1.0) [![Sourcegraph for Repo Reference Count](https://img.shields.io/badge/build-passing-brightgreen.svg)]() [![Sourcegraph for Repo Reference Count](https://img.shields.io/badge/License-GPLv3-brightgreen.svg)](https://github.com/Wanguy/assignment/blob/master/LICENSE) 
 
 ## Introduction
 
