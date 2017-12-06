@@ -12,23 +12,7 @@ This is a simple and pure notebook App.
 
 ## Interface
 
-![Main screen](https://github.com/Wanguy/assignment/blob/master/img/Screen%20Shot%202017-12-06%20at%2021.20.40.png)
-
-(main screen on iPhone X)
-
-![Add notebook](https://github.com/Wanguy/assignment/blob/master/img/Screen%20Shot%202017-12-06%20at%2021.16.32.png)
-
-(Add-notebook screen on iPhone X)
-
-![notebook](https://github.com/Wanguy/assignment/blob/master/img/Screen%20Shot%202017-12-06%20at%2021.17.26.png)
-
-(Notebook screen on iPhone X)
-
-![Edit note](https://github.com/Wanguy/assignment/blob/master/img/Screen%20Shot%202017-12-06%20at%2021.20.15.png)
-
-(Edit-note screen on iPhone X)
-
-Using Auto Layout.
+![](https://github.com/Wanguy/assignment/blob/master/img/Grapher.png)
 
 ## License
 
