@@ -1,8 +1,15 @@
 ﻿<Properties StartupConfiguration="{5A6924A1-4CE0-49B1-ACF8-FC90FB327F03}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Calculator_Csharp/Program.cs">
     <Files>
-      <File FileName="Calculator_Csharp/Program.cs" Line="68" Column="6" />
+      <File FileName="Calculator_Csharp/Program.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ClassPad">
+        <State name="__root__">
+          <Node name="assignment_0922" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
