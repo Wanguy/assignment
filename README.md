@@ -14,6 +14,8 @@ This is a simple and pure notebook App.
 
 ![](https://github.com/Wanguy/assignment/blob/master/img/Grapher.png)
 
+<img src="https://github.com/Wanguy/assignment/blob/master/img/Grapher.png" width="500px" />
+
 ## License
 
 Copyright (c) 2015-2017 Wanguy. Released under GPLv3. See [LICENSE](https://github.com/Wanguy/assignment/blob/master/LICENSE) for details.
