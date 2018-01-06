@@ -32,84 +32,66 @@
 import UIKit
 
 protocol ItemDetailViewControllerDelegate: class {
-    func itemDetailViewControllerDidCancel(_ controller: ItemDetailViewController)
-    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: ChecklistItem)
-    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: ChecklistItem)
+  func itemDetailViewControllerDidCancel(_ controller: ItemDetailViewController)
+  func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: ChecklistItem)
+  func itemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: ChecklistItem)
 }
 
 class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
+  @IBOutlet weak var textField: UITextField!
+  @IBOutlet weak var doneBarButton: UIBarButtonItem!
+  weak var delegate: ItemDetailViewControllerDelegate?
+  var itemToEdit: ChecklistItem?
   
-    @IBOutlet weak var descriptionTextView: UITextView!
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var doneBarButton: UIBarButtonItem!
-    weak var delegate: ItemDetailViewControllerDelegate?
-    var itemToEdit: ChecklistItem?
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Disable large titles for this view controller
+    navigationItem.largeTitleDisplayMode = .never
+    if let itemToEdit = itemToEdit {
+      title = "Edit Item"
+      textField.text = itemToEdit.text
+      doneBarButton.isEnabled = true
+    }
+  }
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Disable large titles for this view controller
-        //    navigationItem.largeTitleDisplayMode = .always
-        descriptionTextView.text = ""
-        if let itemToEdit = itemToEdit {
-            title = "Edit Note"
-            textField.text = itemToEdit.text
-            doneBarButton.isEnabled = true
-        }
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    textField.becomeFirstResponder()
+  }
+  
+  // MARK:- Actions
+  @IBAction func cancel() {
+    delegate?.itemDetailViewControllerDidCancel(self)
+  }
+  
+  @IBAction func done() {
+    if let itemToEdit = itemToEdit {
+      itemToEdit.text = textField.text!
+      delegate?.itemDetailViewController(self, didFinishEditing: itemToEdit)
       
+    } else {
+      let item = ChecklistItem()
+      item.text = textField.text!
+      item.checked = false
+      delegate?.itemDetailViewController(self, didFinishAdding: item)
     }
+  }
   
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        textField.becomeFirstResponder()
-    }
+  // MARK:- TableView Delegates
+  override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+    return nil
+  }
   
-    // MARK:- Actions
-    @IBAction func cancel() {
-        delegate?.itemDetailViewControllerDidCancel(self)
-    }
-  
-    @IBAction func done() {
-        if let itemToEdit = itemToEdit {
-            itemToEdit.text = textField.text!
-            delegate?.itemDetailViewController(self, didFinishEditing: itemToEdit)
-          
-        } else {
-            let item = ChecklistItem()
-            item.text = textField.text!
-            item.checked = false
-            delegate?.itemDetailViewController(self, didFinishAdding: item)
-        }
-    }
-  
-    // MARK:- TableView Delegates
-    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        return nil
-    }
-  
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 && indexPath.row == 0 {
-            descriptionTextView.becomeFirstResponder()
-        }
-    }
-  
-    // MARK:- UITextField Delegates
-    func textField(_ textField: UITextField,
-                   shouldChangeCharactersIn range: NSRange,
-                   replacementString string: String) -> Bool {
-      
-        let oldText = textField.text!
-        let stringRange = Range(range, in:oldText)!
-        let newText = oldText.replacingCharacters(in: stringRange, with: string)
-        doneBarButton.isEnabled = !newText.isEmpty
-        return true
-    }
-  
-    @objc func hideKeyboard(_ gestureRecognizer: UIGestureRecognizer) {
-        let point = gestureRecognizer.location(in: tableView)
-        let indexPath = tableView.indexPathForRow(at: point)
-        if indexPath != nil && indexPath!.section == 0 && indexPath!.row == 0 {
-            return
-        }
-        descriptionTextView.resignFirstResponder()
-    }
+  // MARK:- UITextField Delegates
+  func textField(_ textField: UITextField,
+                 shouldChangeCharactersIn range: NSRange,
+                 replacementString string: String) -> Bool {
+    
+    let oldText = textField.text!
+    let stringRange = Range(range, in:oldText)!
+    let newText = oldText.replacingCharacters(in: stringRange, with: string)
+    doneBarButton.isEnabled = !newText.isEmpty
+    return true
+  }
 }
+

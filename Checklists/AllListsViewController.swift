@@ -1,57 +1,45 @@
 //
 /**
-* Copyright (c) 2017 Razeware LLC
-*
-* Permission is hereby granted, free of charge, to any person obtaining a copy
-* of this software and associated documentation files (the "Software"), to deal
-* in the Software without restriction, including without limitation the rights
-* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-* copies of the Software, and to permit persons to whom the Software is
-* furnished to do so, subject to the following conditions:
-*
-* The above copyright notice and this permission notice shall be included in
-* all copies or substantial portions of the Software.
-*
-* Notwithstanding the foregoing, you may not use, copy, modify, merge, publish, 
-* distribute, sublicense, create a derivative work, and/or sell copies of the 
-* Software in any work that is designed, intended, or marketed for pedagogical or 
-* instructional purposes related to programming, coding, application development, 
-* or information technology.  Permission for such use, copying, modification,
-* merger, publication, distribution, sublicensing, creation of derivative works, 
-* or sale is expressly withheld.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-* THE SOFTWARE.
-*/
+ * Copyright (c) 2017 Razeware LLC
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
+ * distribute, sublicense, create a derivative work, and/or sell copies of the
+ * Software in any work that is designed, intended, or marketed for pedagogical or
+ * instructional purposes related to programming, coding, application development,
+ * or information technology.  Permission for such use, copying, modification,
+ * merger, publication, distribution, sublicensing, creation of derivative works,
+ * or sale is expressly withheld.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
 
 import UIKit
 
 class AllListsViewController: UITableViewController, ListDetailViewControllerDelegate {
-  var lists = [Checklist]()
+  var dataModel: DataModel!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Enable large titles
     navigationController?.navigationBar.prefersLargeTitles = true
-    // Add placeholder data
-    var list = Checklist(name: "Birthdays")
-    lists.append(list)
-    
-    list = Checklist(name: "Groceries")
-    lists.append(list)
-    
-    list = Checklist(name: "Cool Apps")
-    lists.append(list)
-    
-    list = Checklist(name: "To Do")
-    lists.append(list)
   }
-
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
@@ -81,25 +69,25 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
   
   // MARK: - Table view data source
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return lists.count
+    return dataModel.lists.count
   }
-
+  
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = makeCell(for: tableView)
     // Update cell informaiton
-    let checklist = lists[indexPath.row]
+    let checklist = dataModel.lists[indexPath.row]
     cell.textLabel!.text = checklist.name
     cell.accessoryType = .detailDisclosureButton
     return cell
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let checklist = lists[indexPath.row]
+    let checklist = dataModel.lists[indexPath.row]
     performSegue(withIdentifier: "ShowChecklist", sender: checklist)
   }
   
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-    lists.remove(at: indexPath.row)
+    dataModel.lists.remove(at: indexPath.row)
     
     let indexPaths = [indexPath]
     tableView.deleteRows(at: indexPaths, with: .automatic)
@@ -110,7 +98,7 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
     let controller = storyboard!.instantiateViewController(withIdentifier: "ListDetailViewController") as! ListDetailViewController
     controller.delegate = self
     
-    let checklist = lists[indexPath.row]
+    let checklist = dataModel.lists[indexPath.row]
     controller.checklistToEdit = checklist
     navigationController?.pushViewController(controller, animated: true)
   }
@@ -121,8 +109,8 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
   }
   
   func listDetailViewController(_ controller: ListDetailViewController, didFinishAdding checklist: Checklist) {
-    let newRowIndex = lists.count
-    lists.append(checklist)
+    let newRowIndex = dataModel.lists.count
+    dataModel.lists.append(checklist)
     
     let indexPath = IndexPath(row: newRowIndex, section: 0)
     let indexPaths = [indexPath]
@@ -132,7 +120,7 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
   }
   
   func listDetailViewController(_ controller: ListDetailViewController, didFinishEditing checklist: Checklist) {
-    if let index = lists.index(of: checklist) {
+    if let index = dataModel.lists.index(of: checklist) {
       let indexPath = IndexPath(row: index, section: 0)
       if let cell = tableView.cellForRow(at: indexPath) {
         cell.textLabel!.text = checklist.name
@@ -141,3 +129,4 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
     navigationController?.popViewController(animated: true)
   }
 }
+

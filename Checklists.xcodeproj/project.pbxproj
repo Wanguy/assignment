@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93965D7F2000F50C00DE7550 /* DataMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93965D7E2000F50C00DE7550 /* DataMode.swift */; };
 		DD3D50CD1EFB4F370098CA57 /* AllListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3D50CC1EFB4F370098CA57 /* AllListsViewController.swift */; };
 		DD3D50CF1EFB6F830098CA57 /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3D50CE1EFB6F830098CA57 /* Checklist.swift */; };
 		DD3D50D11EFBE4780098CA57 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3D50D01EFBE4780098CA57 /* ListDetailViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		93965D7E2000F50C00DE7550 /* DataMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMode.swift; sourceTree = "<group>"; };
 		DD3D50CC1EFB4F370098CA57 /* AllListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllListsViewController.swift; sourceTree = "<group>"; };
 		DD3D50CE1EFB6F830098CA57 /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
 		DD3D50D01EFBE4780098CA57 /* ListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				DD3D50CC1EFB4F370098CA57 /* AllListsViewController.swift */,
 				DD3D50CE1EFB6F830098CA57 /* Checklist.swift */,
 				DD3D50D01EFBE4780098CA57 /* ListDetailViewController.swift */,
+				93965D7E2000F50C00DE7550 /* DataMode.swift */,
 			);
 			path = Checklists;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93965D7F2000F50C00DE7550 /* DataMode.swift in Sources */,
 				DD4643B61EF3869500E877E9 /* ChecklistViewController.swift in Sources */,
 				DD3D50D11EFBE4780098CA57 /* ListDetailViewController.swift in Sources */,
 				DD910DA31EF64AFB0007D812 /* ItemDetailViewController.swift in Sources */,
