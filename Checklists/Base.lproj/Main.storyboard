@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01q-9o-GLy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01q-9o-GLy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bR4-sj-exF" id="caj-at-dnb">
-                                    <rect key="frame" x="0.0" y="0.0" width="307" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="308" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5W-E0-gUg">
@@ -80,7 +80,7 @@
                             <outlet property="delegate" destination="lvK-Wp-bce" id="M2r-GI-nUr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Notebook" id="3HP-Gz-gHQ">
+                    <navigationItem key="navigationItem" title="Checklists" id="3HP-Gz-gHQ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="AAu-zK-fIE">
                             <connections>
                                 <segue destination="6Mg-hf-fWR" kind="show" identifier="AddChecklist" id="iUX-xg-D4j"/>
@@ -96,7 +96,7 @@
             </objects>
             <point key="canvasLocation" x="449" y="123"/>
         </scene>
-        <!--Add Notebook-->
+        <!--Add Checklist-->
         <scene sceneID="It4-CA-7dv">
             <objects>
                 <tableViewController storyboardIdentifier="ListDetailViewController" id="6Mg-hf-fWR" customClass="ListDetailViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
@@ -114,8 +114,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Notebook" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7gf-RO-11d">
-                                                    <rect key="frame" x="16" y="6" width="343" height="30"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the List" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7gf-RO-11d">
+                                                    <rect key="frame" x="8" y="6" width="359" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -136,7 +136,7 @@
                             <outlet property="delegate" destination="6Mg-hf-fWR" id="J8X-V5-FaB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Notebook" id="SJF-uA-Crp">
+                    <navigationItem key="navigationItem" title="Add Checklist" id="SJF-uA-Crp">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Xth-Zx-MdG">
                             <connections>
                                 <action selector="cancel" destination="6Mg-hf-fWR" id="wLa-8n-FEs"/>
@@ -157,7 +157,7 @@
             </objects>
             <point key="canvasLocation" x="448.80000000000001" y="912.5937031484259"/>
         </scene>
-        <!--Add Note-->
+        <!--Add Item-->
         <scene sceneID="iJn-fR-Ina">
             <objects>
                 <tableViewController id="rFJ-Pr-j9r" customClass="ItemDetailViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
@@ -175,8 +175,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V4f-mm-cFy">
-                                                    <rect key="frame" x="16" y="6" width="343" height="30"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the item" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V4f-mm-cFy">
+                                                    <rect key="frame" x="8" y="5" width="304" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -191,34 +191,13 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="Apm-81-nJW">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="458" id="mcb-6R-zlF">
-                                        <rect key="frame" x="0.0" y="115" width="375" height="458"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mcb-6R-zlF" id="fS8-D6-qpy">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="457.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0VE-HQ-5en">
-                                                    <rect key="frame" x="16" y="11" width="343" height="468"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="rFJ-Pr-j9r" id="npe-5J-0N8"/>
                             <outlet property="delegate" destination="rFJ-Pr-j9r" id="Cjy-C4-sXG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Note" id="FBM-ej-ddq">
+                    <navigationItem key="navigationItem" title="Add Item" id="FBM-ej-ddq">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="FSx-F7-QPr">
                             <connections>
                                 <action selector="cancel" destination="rFJ-Pr-j9r" id="VgP-Ay-Hdp"/>
@@ -231,22 +210,21 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="descriptionTextView" destination="0VE-HQ-5en" id="Oew-ll-Kwm"/>
                         <outlet property="doneBarButton" destination="OOn-vy-5GK" id="ube-NG-5mE"/>
                         <outlet property="textField" destination="V4f-mm-cFy" id="q98-G4-Fde"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XmB-ji-uZX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2112.8000000000002" y="122.78860569715144"/>
+            <point key="canvasLocation" x="2113" y="123"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2So-QK-boT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="01q-9o-GLy" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="CmS-02-sGA">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CmS-02-sGA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -260,7 +238,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jh3-3e-6fh"/>
         <segue reference="xxw-Td-Ril"/>
+        <segue reference="jh3-3e-6fh"/>
     </inferredMetricsTieBreakers>
 </document>
