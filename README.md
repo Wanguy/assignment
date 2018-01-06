@@ -18,7 +18,7 @@ This is a simple and pure notebook App.
 
 ## Interface
 
-<img src="https://github.com/Wanguy/assignment/blob/master/img/Grapher.png" width="800px" />
+<img src="https://github.com/Wanguy/assignment/blob/master/img/Interface.png"/>
 
 ## License
 
