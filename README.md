@@ -1,6 +1,6 @@
 # Notebook
 
-[![Travis](https://img.shields.io/badge/Download-v1.0-blue.svg)](https://github.com/Wanguy/assignment/releases/tag/1.0) [![Sourcegraph for Repo Reference Count](https://img.shields.io/badge/build-passing-brightgreen.svg)]() [![Sourcegraph for Repo Reference Count](https://img.shields.io/badge/License-GPLv3-brightgreen.svg)](https://github.com/Wanguy/assignment/blob/master/LICENSE) 
+[![Travis](https://img.shields.io/badge/Download-v3.0.1-blue.svg)](https://github.com/Wanguy/assignment/releases) [![Sourcegraph for Repo Reference Count](https://img.shields.io/badge/build-passing-brightgreen.svg)]() [![Sourcegraph for Repo Reference Count](https://img.shields.io/badge/License-GPLv3-brightgreen.svg)](https://github.com/Wanguy/assignment/blob/master/LICENSE) 
 
 ## Introduction
 
@@ -9,6 +9,12 @@ The Notebook program based on iOS 11.0.
 You can recording your new idea in this App whenever you want. 
 
 This is a simple and pure notebook App. 
+
+## Requirements
+
+- Xcode 9
+- Swift 4
+- iOS 10 or later
 
 ## Interface
 
