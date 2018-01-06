@@ -12,9 +12,7 @@ This is a simple and pure notebook App.
 
 ## Interface
 
-![](https://github.com/Wanguy/assignment/blob/master/img/Grapher.png)
-
-<img src="https://github.com/Wanguy/assignment/blob/master/img/Grapher.png" width="500px" />
+<img src="https://github.com/Wanguy/assignment/blob/master/img/Grapher.png" width="800px" />
 
 ## License
 
